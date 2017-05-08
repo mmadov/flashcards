@@ -1,18 +1,14 @@
 class HomeController < ApplicationController
     def index
-        @card = Card.review_date
+      @card = Card.review_date
     end
     def sub
-               @cards = Card.find(params[:id])
-               if @cards.translated_text === params[:translated_text]
-               @cards = Card.find(params[:id])
-               @tess = "Правильно"
-               @cards.update_review_date
-        else
-               @tess = "Не правильно"
-        end
+      @cards = Card.find(params[:id])
+      if @cards.translated_text === params[:translated_text]
+        @tess = "Правильно"
+        @cards.update_review_date
+      else
+        @tess = "Не правильно"
+      end
     end
-   
-     
-
 end
