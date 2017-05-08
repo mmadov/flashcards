@@ -13,7 +13,7 @@ class Card < ApplicationRecord
     order("RANDOM()").first
   }
   def update_review_date
-    update!(review_date: Time.now+4.days)
+    update!(review_date: Time.now+3.days)
   end 
   def normalize_card_review_date
     self.review_date = Time.now+3.days
