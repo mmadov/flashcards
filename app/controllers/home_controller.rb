@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-      @card = Card.review_date
+    @card = Card.review_date
   end
 
   def sub
@@ -12,5 +12,4 @@ class HomeController < ApplicationController
       flash.now[:error] = 'Не правильно'
     end
   end
-
 end
