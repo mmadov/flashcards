@@ -1,2 +1,4 @@
- <%= @tess %>
- <%= @cards.review_date %>
+<% flash.each do |key, message| %>
+  <p class="<%= key %>"><%= message %></p>
+<% end %>
+<%= @card.review_date %>
