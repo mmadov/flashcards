@@ -17,7 +17,7 @@ class Card < ApplicationRecord
   end
 
   def update_review_date
-    normalize_card_review_date&&save
+    normalize_card_review_date && save
   end 
 
   def normalize_card_review_date
