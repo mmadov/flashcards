@@ -4,12 +4,12 @@ class HomeController < ApplicationController
       @card = Card.review_date
     end
     def sub
-      @cards = Card.find(params[:id])
-      if @cards.translated_text === params[:translated_text]
-        @tess = "Правильно"
-        @cards.update_review_date
-      else
-        @tess = "Не правильно"
-      end
+      @card = Card.find(params[:id])
+      if @card.check_translation(params[:translated_text])
+      @card.update_review_date
+      flash.now[:notice] = "Правильно"
+    else 
+       flash.now[:error] = "Не правильно"
+       end
     end
 end
