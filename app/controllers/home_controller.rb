@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   def index
       @card = Card.review_date
   end
@@ -10,7 +9,7 @@ class HomeController < ApplicationController
       @card.update_review_date
       flash.now[:notice] = 'Правильно'
     else 
-      flash.now[:error] = \Не правильно'
+      flash.now[:error] = 'Не правильно'
     end
   end
 
