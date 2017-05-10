@@ -1,6 +1,6 @@
 class RecordValidator < ActiveModel::Validator
   def validate(record)
-    if record.original_text == record.translated_text
+    if record.original_text === record.translated_text
       record.errors[:base] << "This person is evil"
     end
   end
