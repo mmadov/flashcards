@@ -1,10 +1,11 @@
 class RecordValidator < ActiveModel::Validator
   def validate(record)
-    if record.original_text == record.translated_text
+    if record.original_text.strip.upcase === record.translated_text.strip.upcase
       record.errors[:base] << "This person is evil"
     end
   end
 end
+
 class Card < ApplicationRecord
   before_create :normalize_card_review_date
   validates_with RecordValidator
