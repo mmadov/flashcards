@@ -8,12 +8,12 @@ RSpec.describe Card, :type => :model do
   end
     it 'С пробелом значения' do
       time = Time.now + 3.days
-      card = Card.create!(original_text: "cat", translated_text: "кот")
-      expect(card.check_translation("собака")).to be false
+      card = Card.create!(original_text: 'cat', translated_text: 'кот')
+      expect(card.check_translation('собака')).to be false
   end
     it 'Разные значение' do
       time = Time.now + 3.days
-      card = Card.create!(original_text: "cat", translated_text: "кот")
-      expect(card.check_translation("кот")).to be true
+      card = Card.create!(original_text: 'cat', translated_text: 'кот')
+      expect(card.check_translation('кот')).to be true
   end
 end
