@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Card, :type => :model do
+RSpec.describe Card do
   it 'Time Test' do
     time = Time.now + 3.days
     card = FactoryGirl.create(:card)
