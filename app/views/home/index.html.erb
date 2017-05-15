@@ -1,14 +1,13 @@
-    <section>
-      <p style="font-size: 22px;">
-        Первый в мире удобный менеджер флеш-карточек. Именно так.
-      </p>
-
- <%= @card.original_text %>
- <%= @tess %>
- <%= form_tag('/sub', method: "post")  do %>
- <%= text_field_tag(:translated_text) %>
- <%= hidden_field_tag 'id', @card.id %>
- <%= submit_tag("Search") %>
- <% end %>
-    </section>
-
+<section>
+  <p style="font-size: 22px;">
+    Первый в мире удобный менеджер флеш-карточек. Именно так.
+  </p>
+   <% if @card %>
+     <%= @card.original_text %>
+     <%= form_tag('/sub', method: :post)  do %>
+      <%= text_field_tag(:user_translation) %>
+      <%= hidden_field_tag 'id', @card.id %>
+      <%= submit_tag 'Check' %>
+     <% end %>
+  <% end %>
+</section>
