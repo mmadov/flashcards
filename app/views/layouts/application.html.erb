@@ -32,6 +32,11 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
   </nav>
+  <% flash.each do |key, message| %>
+  <div id="flash-<%= key %>" class="flash-<%= key %>">
+    <%= message %>
+  </div>
+<% end %>
   <section id="container">
               <%= yield %>
   </section>
