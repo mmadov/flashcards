@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 describe 'review cards' do
-  let(:card) { FactoryGirl.create(:card) }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:card) { FactoryGirl.create(:card,user: user) }
+
   before do
     card.update(review_date: 1.day.ago)
     visit root_path
