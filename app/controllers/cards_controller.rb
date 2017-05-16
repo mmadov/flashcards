@@ -19,8 +19,12 @@ class CardsController < ApplicationController
     end
     def create
     @card = Card.new(card_params)
-    @card.save
-    redirect_to @card
+    if @card.save
+    redirect_to @card, notice: 'The card was created successfully.'
+    else
+    flash[:error] = 'There was an error creating the card.'
+    render :new
+    end    
     end
     def destroy
     @card = Card.find(params[:id])
