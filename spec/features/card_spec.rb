@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'review cards' do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:card) { FactoryGirl.create(:card,user: user) }
+
+  let(:card) { FactoryGirl.create(:card) }
 
   before do
     card.update(review_date: 1.day.ago)
