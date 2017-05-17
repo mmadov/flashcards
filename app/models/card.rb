@@ -7,6 +7,7 @@ class RecordValidator < ActiveModel::Validator
 end
 
 class Card < ApplicationRecord
+  belongs_to :user
   before_create :normalize_card_review_date
   validates_with RecordValidator
   scope :review_date, -> { where('review_date <= ?', Time.now).order('RANDOM()') }
