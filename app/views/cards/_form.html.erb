@@ -1,6 +1,6 @@
 <%= simple_form_for @card do |f| %>
-  <%= f.input :original_text, label: 'Original Text' ,required: false%>
-  <%= f.input :translated_text, label: 'Translated Text' , required: false%>
+  <%= f.input :original_text, label: 'Original Text' ,required: false %>
+  <%= f.input :translated_text, label: 'Translated Text' , required: false %>
   <%= f.button :submit %>
 <%= link_to 'Back', cards_path %>
 <% end %>
