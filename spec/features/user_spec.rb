@@ -7,7 +7,7 @@ describe 'User login' do
   end
   it 'Login successful' do
   fill_in :email, with: user.email
-  fill_in :password, with: user.password
+  fill_in :password, with: "mamedov"
     save_and_open_page
   click_button 'Login'
 
