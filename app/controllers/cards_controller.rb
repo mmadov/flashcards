@@ -1,10 +1,10 @@
 class CardsController < ApplicationController
     def index
-        @cards = Card.all
+      @cards = current_user.cards.all
     end
  
     def new
-        @card = Card.new
+      @card = Card.new
     end
     def edit
     @card = Card.find(params[:id])
@@ -18,7 +18,8 @@ class CardsController < ApplicationController
     end
     end
     def create
-    @card = Card.new(card_params)
+    @card = current_user.cards.new(card_params)
+  
     if @card.save
     redirect_to @card, notice: 'The card was created successfully.'
     else
@@ -40,6 +41,6 @@ class CardsController < ApplicationController
     end
     private
     def card_params
-    params.require(:card).permit(:original_text, :translated_text,:review_date)
+    params.require(:card).permit(:original_text, :translated_text,:review_date,:user_id)
     end
     end
