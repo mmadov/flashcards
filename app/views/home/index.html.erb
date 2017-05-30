@@ -4,6 +4,7 @@
   </p>
    <% if @card %>
      <%= @card.original_text %>
+     <%= image_tag(@card.image_url) if @card.image? %>
      <%= form_tag('/sub', method: :post)  do %>
       <%= text_field_tag(:user_translation) %>
       <%= hidden_field_tag 'id', @card.id %>

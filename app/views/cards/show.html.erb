@@ -1,2 +1,3 @@
 <%= @card.original_text %>
 <%= @card.review_date %>
+     <%= image_tag(@card.image_url) if @card.image? %>
