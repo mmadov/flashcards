@@ -7,6 +7,7 @@ class RecordValidator < ActiveModel::Validator
 end
 
 class Card < ApplicationRecord
+  mount_uploader :image, ImageUploader
   belongs_to :user
   before_create :normalize_card_review_date
   validates_with RecordValidator
